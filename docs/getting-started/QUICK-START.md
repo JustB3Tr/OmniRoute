@@ -144,6 +144,7 @@ You can see the details of the request by clicking [Monitoring/Logs](http://loca
 
 ## What's Next?
 
+- **[Setup Guide](./SETUP.md)** — The ordered, PC-focused walkthrough (env secrets, provider signup links, Claude Code CLI wiring)
 - **[Auto-Combo Guide](./AUTO-COMBO-GUIDE.md)** — Let OmniRoute pick the best AI for you
 - **[Providers Guide](./PROVIDERS-GUIDE.md)** — Connect more providers (free and paid)
 - **[Free Tiers Guide](./FREE-TIERS-GUIDE.md)** — Get free AI with no credit card
