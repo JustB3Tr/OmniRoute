@@ -1,8 +1,8 @@
-# OmniRoute — Setup Guide for This Machine
+# Setup Guide: OmniRoute on Your Machine
 
-A personal, ordered walkthrough for getting OmniRoute running locally and wiring
-it into Claude Code CLI. For the exhaustive reference material this is distilled
-from, see `docs/guides/SETUP_GUIDE.md` and `docs/guides/CLAUDE-CODE-CONFIGURATION.md`.
+> **TL;DR**: Install → set `.env` secrets → first login → connect a provider → create an
+> OmniRoute API key → point Claude Code CLI at it. This is the ordered, PC-focused version
+> of that flow; see [Quick Start](./QUICK-START.md) for the 3-minute version.
 
 No API keys are required just to install and boot OmniRoute — its own secrets
 (`JWT_SECRET`, `API_KEY_SECRET`) are generated locally on first install, not
@@ -75,7 +75,7 @@ openssl rand -base64 48   # → JWT_SECRET
 openssl rand -hex 32      # → API_KEY_SECRET
 ```
 
-Full variable reference: `docs/reference/ENVIRONMENT.md`.
+Full variable reference: [Environment Reference](../reference/ENVIRONMENT.md).
 
 ---
 
@@ -136,8 +136,9 @@ Sign up on the provider's site, generate an API key, then paste it into
 | Cerebras        | https://cerebras.ai           |
 | NVIDIA NIM      | https://build.nvidia.com      |
 
-Full catalog of all 290 providers + free-tier limits:
-`docs/reference/PROVIDER_REFERENCE.md` and `docs/getting-started/FREE-TIERS-GUIDE.md`.
+Full catalog of every supported provider and its free-tier limits:
+[Provider Reference](../reference/PROVIDER_REFERENCE.md) and
+[Free Tiers Guide](./FREE-TIERS-GUIDE.md).
 
 ---
 
@@ -193,7 +194,7 @@ profile's `settings.json`):
 ```
 
 Deeper reference (model tiers, discovery aliases, remote mode):
-`docs/guides/CLAUDE-CODE-CONFIGURATION.md`.
+[Claude Code CLI Configuration](../guides/CLAUDE-CODE-CONFIGURATION.md).
 
 ---
 
@@ -210,4 +211,4 @@ claude mcp add-server omniroute --type http --url http://localhost:20128/api/mcp
 - **"Ambiguous model" errors** → pin a prefixed model id, e.g. `ANTHROPIC_MODEL=cc/claude-opus-4-8`.
 - **`/model` picker is empty** → needs Claude Code v2.1.219+ and `CLAUDE_CODE_ENABLE_GATEWAY_MODEL_DISCOVERY=1`.
 - **Auth errors from Claude Code** → profiles never store the token; use `omniroute launch --profile` or export `ANTHROPIC_AUTH_TOKEN` yourself.
-- **Anything else** → `docs/guides/TROUBLESHOOTING.md`, or run `omniroute doctor`.
+- **Anything else** → [Troubleshooting](./TROUBLESHOOTING.md), or run `omniroute doctor`.
